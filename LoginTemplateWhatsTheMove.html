@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="LoginTemplateWhatsTheMove.css">   
+    <title>What's The Move?</title>    
+  </head>  
+  <body>           
+    <section>
+      <div class="login-wrapper">
+        <form action="" class="form"> 
+          <img src="img/avatar.png" alt="">
+          <h2>What's The Move?</h2>   
+          <div class="input-group">
+            <input type="text" name="loginUser" id="loginUser" required>
+            <label for="loginUser">Enter City</label>
+          </div> 
+        </form>              
+      </div>
+    </section> 
+   
+    <script>
+      // Listen for keypress events on the input element
+      document.getElementById("loginUser").addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) { 
+    event.preventDefault(); // Prevent form submission
+    window.location.href = "MainPage.html"; // Redirect to the next page
+  }
+});
+    </script>
+  </body>
+ 
+</br>
+</br> 
+</br>
+</br>
+</br> 
+</br>   
+</br>
+</br> 
+</br>
+</br>
+</br> 
+</br>  
+     
+</body>
+</html>
