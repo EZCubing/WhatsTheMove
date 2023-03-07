@@ -8,6 +8,7 @@ body {
   background-size: cover;
   overflow: auto;
   font-family: sans-serif;
+  z-index: 0;
 }
 .login-wrapper {
   height: 100vh;
@@ -25,6 +26,7 @@ body {
   border-radius: 10px;
   color: #fff;
   box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }
 .form::before {
   content: "";
@@ -37,7 +39,6 @@ body {
   transform: skewX(-26deg);
   transform-origin: bottom left;
   border-radius: 10px;
-  pointer-events: none;
 }
 .form img {
   position: absolute;
@@ -74,7 +75,6 @@ body {
   left: 0;
   padding: 10px 0;
   font-size: 1rem;
-  pointer-events: none;
   transition: 0.3s ease-out;
 }
 .form .input-group input:focus + label,
@@ -151,4 +151,45 @@ body {
   font-weight: 900;
   text-decoration: none;
   color: inherit;
+}
+
+/* Show the dropdown menu when the input field is clicked */
+
+/* Style the dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+/* Style the dropdown menu items */
+.dropdown-menu li {
+  display: block;
+  z-index: 3;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  z-index: 4;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Style the search input field */
+.input-group input[type="text"] {
+  width: 100%;
 }

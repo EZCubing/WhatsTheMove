@@ -9,28 +9,74 @@
     <title>What's The Move?</title>    
   </head>  
   <body>           
-    <section>
-      <div class="login-wrapper">
-        <form action="" class="form"> 
-          <h2>What's The Move?</h2>   
-          <div class="input-group">
-            <input type="text" name="loginUser" id="loginUser" required>
-            <label for="loginUser">Enter City</label>
-          </div> 
-        </form>              
-      </div>
-    </section> 
-   
-    <script>
-      // Listen for keypress events on the input element
-      document.getElementById("loginUser").addEventListener("keypress", function(event) {
-  if (event.keyCode === 13) { 
-    event.preventDefault(); // Prevent form submission
-    window.location.href = "MainPage.html"; // Redirect to the next page
-  }
-});
-    </script>
-  </body>
+  <section>
+    <div class="login-wrapper">
+      <form action="" class="form"> 
+        <h2>What's The Move?</h2>   
+        <div class="input-group">
+          <input type="text" name="loginUser" id="loginUser" placeholder="Enter City" >
+          </input>
+        </div>
+        <ul class="dropdown-menu">
+            <li><a href="#">Albuquerque</a></li>
+            <li><a href="#">Lubbock</a></li>
+            <li><a href="#">Salt Lake City</a></li>
+            <li><a href="#">Seattle</a></li>
+        </ul>
+      </form>              
+    </div>
+  </section> 
+
+  <script>
+    // Toggle the dropdown menu
+    document.querySelector(".input-group input").addEventListener("click", function(event) {
+      console.log("Input is clicked");
+      document.querySelector(".dropdown-menu").style.display = "block";
+      event.stopPropagation();
+    });
+
+    // Close the dropdown menu if the user clicks outside of it
+    document.querySelector("body").addEventListener("click", function(event) {
+      console.log("Clicked out of input");
+        var dropdowns = document.querySelector(".dropdown-menu").style.display = "none";
+        event.stopPropagation();
+    });
+
+    // Filter the dropdown menu based on the user's input
+    document.getElementById("loginUser").addEventListener("keyup", function(event) {
+      console.log("Added letter to input");
+      var input = this.value.toLowerCase();
+      var items = document.querySelectorAll(".dropdown-menu li a");
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        if (item.innerHTML.toLowerCase().indexOf(input) > -1) {
+          item.style.display = "";
+        } else {
+          item.style.display = "none";
+        }
+      }
+    });
+
+    // Autocomplete the search with the selected dropdown menu item
+    document.querySelectorAll(".dropdown-menu li a").forEach(item => item.addEventListener("click", function(event) {
+      console.log("Dropdown option clicked");
+      document.getElementById("loginUser").value = item.textContent; // set input value to selected option
+      document.getElementById("loginUser").focus();
+      event.stopPropagation();
+    })
+    );
+
+
+    // Redirect to the next page when the user hits enter
+    document.getElementById("loginUser").addEventListener("keypress", function(event) {
+      console.log("Entered next page");
+      if (event.keyCode === 13) { 
+        event.preventDefault();
+        window.location.href = "MainPage.html";
+      }
+    });
+  </script>
+</body>
  
 </br>
 </br> 
