@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url("images/WhatsTheMoveBackgroundImageShifted2.jpg");
+  background-image: url("../images/WhatsTheMoveBackgroundImageShifted2.jpg");
   background-size: cover;
   overflow: auto;
   font-family: sans-serif;
