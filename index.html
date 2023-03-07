@@ -62,6 +62,7 @@
       console.log("Dropdown option clicked");
       document.getElementById("loginUser").value = item.textContent; // set input value to selected option
       document.getElementById("loginUser").focus();
+      document.getElementById("dropdown-menu").style.display = "none";
       event.stopPropagation();
     })
     );
