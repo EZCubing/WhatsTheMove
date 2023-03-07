@@ -8,7 +8,7 @@
 } 
  
 body {
-    background-image: url("WhatsTheMoveLoginPage1.jpg"); 
+    background-image: url("../images/WhatsTheMoveLoginPage1.jpg"); 
     background-size: cover;   
     min-height: 100vh; 
     display: flex; 
