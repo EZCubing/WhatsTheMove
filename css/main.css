@@ -71,15 +71,11 @@ nav .logo {
 @media (max-width: 600px) {
   nav .logo {
     flex-direction: column;
-  }
-  .logoImage {
-    height: 150px;
-    width: 150px;
-    border: none;
+    height: 100%;
   }
   nav {
     display: flex;
-    height: 150px;
+    height: 75px;
     width: 100%;
     background: #ff3131;
     align-items: center;
