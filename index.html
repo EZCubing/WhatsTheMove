@@ -20,6 +20,7 @@
         <ul class="dropdown-menu">
             <li><a href="#">Albuquerque</a></li>
             <li><a href="#">Lubbock</a></li>
+            <li><a href="#">Princeton</a></li>
             <li><a href="#">Salt Lake City</a></li>
             <li><a href="#">Seattle</a></li>
         </ul>
@@ -28,23 +29,23 @@
   </section> 
 
   <script>
+    cities = ['albuquerque', "lubbock", "princeton",
+     "saltlakecity", "seattle"];
     // Toggle the dropdown menu
     document.querySelector(".input-group input").addEventListener("click", function(event) {
-      console.log("Input is clicked");
       document.querySelector(".dropdown-menu").style.display = "block";
       event.stopPropagation();
     });
 
     // Close the dropdown menu if the user clicks outside of it
     document.querySelector("body").addEventListener("click", function(event) {
-      console.log("Clicked out of input");
         var dropdowns = document.querySelector(".dropdown-menu").style.display = "none";
         event.stopPropagation();
     });
 
     // Filter the dropdown menu based on the user's input
     document.getElementById("loginUser").addEventListener("keyup", function(event) {
-      console.log("Added letter to input");
+      this.style.color = 'white';
       var input = this.value.toLowerCase();
       var items = document.querySelectorAll(".dropdown-menu li a");
       for (var i = 0; i < items.length; i++) {
@@ -59,7 +60,6 @@
 
     // Autocomplete the search with the selected dropdown menu item
     document.querySelectorAll(".dropdown-menu li a").forEach(item => item.addEventListener("click", function(event) {
-      console.log("Dropdown option clicked");
       document.getElementById("loginUser").value = item.textContent; // set input value to selected option
       document.getElementById("loginUser").focus();
       document.getElementById("dropdown-menu").style.display = "none";
@@ -70,10 +70,12 @@
 
     // Redirect to the next page when the user hits enter
     document.getElementById("loginUser").addEventListener("keypress", function(event) {
-      console.log("Entered next page");
-      if (event.keyCode === 13) { 
+      if (event.keyCode === 13) {
+        cityInput = this.value.toLowerCase().replace(/\s/g, "");
         event.preventDefault();
-        window.location.href = "MainPage.html";
+        if(cities.includes(cityInput)) {
+          window.location.href = `${cityInput}.html`;
+        }
       }
     });
   </script>
