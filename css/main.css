@@ -196,3 +196,28 @@ input[type="checkbox"] {
   width: 75px;
   border: none;
 }
+
+.input-group input:invalid {
+  animation: shake 0.5s;
+}
+
+.shake {
+  animation: shake 0.4s linear;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  10%,
+  90% {
+    transform: translateX(-10px);
+  }
+  30%,
+  70% {
+    transform: translateX(10px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}

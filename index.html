@@ -73,10 +73,22 @@
       if (event.keyCode === 13) {
         cityInput = this.value.toLowerCase().replace(/\s/g, "");
         event.preventDefault();
+        console.log(cities.includes(cityInput));
         if(cities.includes(cityInput)) {
+          this.setCustomValidity("");
+          this.classList.remove('shake');
           window.location.href = `${cityInput}.html`;
+        } else {
+          this.classList.add('shake');
+          setTimeout(() => {
+            this.setCustomValidity("Did not recognize city!");
+          }, 100);
         }
       }
+    });
+
+    document.getElementById("loginUser").addEventListener('animationend', () => {
+      this.classList.remove('shake');
     });
   </script>
 </body>
