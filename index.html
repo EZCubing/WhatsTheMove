@@ -45,8 +45,8 @@
 
     // Filter the dropdown menu based on the user's input
     document.getElementById("loginUser").addEventListener("keyup", function(event) {
-      this.style.color = 'white';
-      var input = this.value.toLowerCase();
+      document.getElementById("loginUser").style.color = 'white';
+      var input = document.getElementById("loginUser").value.toLowerCase();
       var items = document.querySelectorAll(".dropdown-menu li a");
       for (var i = 0; i < items.length; i++) {
         var item = items[i];
@@ -71,24 +71,24 @@
     // Redirect to the next page when the user hits enter
     document.getElementById("loginUser").addEventListener("keypress", function(event) {
       if (event.keyCode === 13) {
-        cityInput = this.value.toLowerCase().replace(/\s/g, "");
+        cityInput = document.getElementById("loginUser").value.toLowerCase().replace(/\s/g, "");
         event.preventDefault();
         console.log(cities.includes(cityInput));
         if(cities.includes(cityInput)) {
-          this.setCustomValidity("");
-          this.classList.remove('shake');
+          document.getElementById("loginUser").setCustomValidity("");
+          document.getElementById("loginUser").classList.remove('shake');
           window.location.href = `${cityInput}.html`;
         } else {
-          this.classList.add('shake');
-          setTimeout(() => {
-            this.setCustomValidity("Did not recognize city!");
-          }, 100);
+          document.getElementById("loginUser").classList.add('shake');
+          console.log(document.getElementById("loginUser").classList);
+          document.getElementById("loginUser").setCustomValidity("Please enter valid city!");
+          document.getElementById("loginUser").reportValidity();
         }
       }
     });
 
     document.getElementById("loginUser").addEventListener('animationend', () => {
-      this.classList.remove('shake');
+      document.getElementById("loginUser").classList.remove('shake');
     });
   </script>
 </body>
