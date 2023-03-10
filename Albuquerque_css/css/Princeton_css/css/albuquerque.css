@@ -1,11 +1,11 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: 0; 
   box-sizing: border-box;
   font-family: sans-serif;
 }
 
-h1 {
+h1 { 
   color: #000;
   text-align: center;
   text-decoration: underline;
@@ -48,14 +48,14 @@ img {
   padding: 16px;   
   border-radius: 10px; 
   border: 1px solid black;
-} 
+}
 
-nav {  
+nav {
   display: flex;
   height: 80px;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgb(255, 0, 0) ,#ffffff);   
-  align-items: center; 
+  background-image: linear-gradient(to bottom, #FF6000 ,#ffffff);    
+  align-items: center;    
   justify-content: space-between;
   padding: 0 50px 0 100px;
   flex-wrap: wrap;
@@ -211,7 +211,7 @@ input[type="checkbox"] {
     transform: translateX(0);
   }
   10%,
-  90% { 
+  90% {
     transform: translateX(-10px);
   }
   30%,
