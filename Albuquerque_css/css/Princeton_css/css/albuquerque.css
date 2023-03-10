@@ -53,8 +53,8 @@ img {
 nav {
   display: flex;
   height: 80px;
-  width: 100%;
-  background-image: linear-gradient(to bottom, #FF6000 ,#ffffff);    
+  width: 100%; 
+  background-image: linear-gradient(to bottom, #ff0000 ,#ffffff);    
   align-items: center;    
   justify-content: space-between;
   padding: 0 50px 0 100px;
