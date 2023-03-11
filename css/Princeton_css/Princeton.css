@@ -78,7 +78,7 @@ nav .logo {
     display: flex;
     height: 75px;
     width: 100%;
-    background: #000000;
+    background-image: linear-gradient(to bottom, #ff6000, #ffffff);
     align-items: center;
     justify-content: space-between;
     padding: 0 50px 0 100px;
