@@ -171,6 +171,8 @@ body {
   max-height: 200px;
   overflow-y: auto;
   z-index: 2;
+  right: 0.5px;
+  width: 380px;
 }
 
 /* Style the dropdown menu items */
